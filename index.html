@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+
+        
+
+        <!-- Necessary for SVG to PNG -->
+        <!-- <script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> -->
+        <script type="text/javascript" src="js/canvg.js"></script>
+        <!-- <script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script> -->
+        <!-- <script type="text/javascript" src="js/base64.js"></script> -->
+        <!-- End necessary -->
+
+        <script type="text/javascript">
+            window.onload = function() {
+
+              var shuttle;
+              shuttle = '<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50.938 100" enable-background="new 0 0 50.938 100" xml:space="preserve"><path d="M9.239,62.648c0.961-2.899,1.93-8.616,2.867-14.145c2.742-16.188,4.345-24.152,10-24.492L22.171,24h0.29c0.011,0,0.021,0,0.03,0l0.4,0.012c5.657,0.338,7.26,8.303,10.002,24.492c0.938,5.528,1.906,11.245,2.901,14.231c0.29,0.57,1.841,1.976,3.205,3.173C39,51.057,39,35.194,39,27c0-2.443-1.557-8.917-4-8.917S31,24.557,31,27c0-19-5-27-8.509-27C19,0,14,8,14,27c0-2.443-1.557-8.917-4-8.917S6,24.557,6,27c0,8.194,0,24.057,0,38.907C7.365,64.708,8.922,63.29,9.239,62.648z"/><path d="M32,64c-3-9-5-36-9.491-36c-0.003,0-0.006,0.001-0.009,0.001S22.494,28,22.491,28C18,28,16,55,13,64C11.696,67.911,0,74,0,80c0,0.75,0,3,0,3l16,3v4l6.5,1.562L29,90v-4l16-3c0,0,0-2.25,0-3C45,74,33.304,67.911,32,64z"/><path d="M6,100h8c0,0,0-8.41,0-12.375l-8-1.5C6,93.227,6,100,6,100z"/><path d="M31,100h8c0,0,0-6.773,0-13.875l-8,1.5C31,91.59,31,100,31,100z"/></svg>'
+
+              //load a svg snippet in the canvas with id = 'canvas'
+              canvg(document.getElementById('canvas'), shuttle)
+
+              var canvas = document.getElementById("canvas");
+              var png = canvas.toDataURL("image/png");
+
+              var pngImage = '<img src="'+png+'"/>';
+              var downloadLink = '<a href="'+png+'" download>Download</a>';
+
+              var pngHold = document.getElementById("pngHold");
+              var pngLink = document.getElementById("pngLink");
+              pngHold.innerHTML = pngImage;
+              pngLink.innerHTML = downloadLink;
+             //  var uintArray = Base64.decode(png); 
+             // document.write(uintArray); 
+              // document.write(downloadLink)
+
+              //ignore mouse events and animation
+              canvg('canvas', 'file.svg', { ignoreMouse: true, ignoreAnimation: true, ignoreDimensions: true, scaleWidth: 800, scaleHeight: 800 }) 
+            }
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        
+        <h1>The original SVG<h1>
+        <span class="icon" >
+            <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50.938 100" enable-background="new 0 0 50.938 100" xml:space="preserve"><path d="M9.239,62.648c0.961-2.899,1.93-8.616,2.867-14.145c2.742-16.188,4.345-24.152,10-24.492L22.171,24h0.29c0.011,0,0.021,0,0.03,0l0.4,0.012c5.657,0.338,7.26,8.303,10.002,24.492c0.938,5.528,1.906,11.245,2.901,14.231c0.29,0.57,1.841,1.976,3.205,3.173C39,51.057,39,35.194,39,27c0-2.443-1.557-8.917-4-8.917S31,24.557,31,27c0-19-5-27-8.509-27C19,0,14,8,14,27c0-2.443-1.557-8.917-4-8.917S6,24.557,6,27c0,8.194,0,24.057,0,38.907C7.365,64.708,8.922,63.29,9.239,62.648z"/><path d="M32,64c-3-9-5-36-9.491-36c-0.003,0-0.006,0.001-0.009,0.001S22.494,28,22.491,28C18,28,16,55,13,64C11.696,67.911,0,74,0,80c0,0.75,0,3,0,3l16,3v4l6.5,1.562L29,90v-4l16-3c0,0,0-2.25,0-3C45,74,33.304,67.911,32,64z"/><path d="M6,100h8c0,0,0-8.41,0-12.375l-8-1.5C6,93.227,6,100,6,100z"/><path d="M31,100h8c0,0,0-6.773,0-13.875l-8,1.5C31,91.59,31,100,31,100z"/></svg>
+        </span>
+
+        <h1>Converted to Canvas</h1>
+        <canvas id="canvas" width="800px" height="800px"></canvas> 
+
+        <h1>PNG</h1>
+        <div id="pngHold"></div>
+        <div id="pngLink"></div>
+
+
+<style type="text/css">
+            svg { width: 800px; height: 800px;}
+        </style>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
